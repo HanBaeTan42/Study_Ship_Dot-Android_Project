@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/HanBaeTan42/app/src/main/res/drawable/content_background.xml" value="0.1" />
         <entry key="..\:/HanBaeTan42/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/HanBaeTan42/app/src/main/res/layout/fragment_findid.xml" value="0.2" />
         <entry key="..\:/Users/heebu/AndroidStudioProjects/Study_Ship_Dot/app/src/main/res/layout/activity_main.xml" value="0.24947916666666667" />
         <entry key="..\:/Users/heebu/AndroidStudioProjects/Study_Ship_Dot/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1825" />
       </map>
