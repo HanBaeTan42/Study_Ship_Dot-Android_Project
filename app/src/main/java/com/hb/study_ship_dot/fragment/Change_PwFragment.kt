@@ -1,10 +1,11 @@
-package com.hb.study_ship_dot
+package com.hb.study_ship_dot.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.hb.study_ship_dot.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -13,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Spare_PwFragment.newInstance] factory method to
+ * Use the [Change_PwFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Spare_PwFragment : Fragment() {
+class Change_PwFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -34,7 +35,7 @@ class Spare_PwFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_spare__pw, container, false)
+        return inflater.inflate(R.layout.fragment_change__pw, container, false)
     }
 
     companion object {
@@ -44,12 +45,12 @@ class Spare_PwFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Spare_PwFragment.
+         * @return A new instance of fragment Change_PwFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Spare_PwFragment().apply {
+            Change_PwFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
