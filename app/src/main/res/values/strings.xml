@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Study_Ship_Dot</string>
+    <string name="app_name">Study_Ship.(Dot)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_title">Study Ship.(Dot)</string>
+    <string name="Spare_Pw"><u>임시 비밀번호</u></string>
 </resources>
