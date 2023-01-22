@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Study_Ship.(Dot)</string>
+    <string name="name">이름</string>
+    <string name="pw">비밀번호</string>
+    <string name="pwch">비밀번호 확인</string>
+    <string name="id">아이디</string>
+    <string name="pn">휴대폰 번호</string>
+    <string name="overlap">중복확인</string>
+    <string name="text">계정 만들기</string>
+    <string name="join">회원가입</string>
 </resources>
