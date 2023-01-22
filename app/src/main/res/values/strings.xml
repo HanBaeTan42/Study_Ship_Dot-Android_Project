@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Study_Ship.(Dot)</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="name">이름</string>
     <string name="pw">비밀번호</string>
     <string name="pwch">비밀번호 확인</string>
