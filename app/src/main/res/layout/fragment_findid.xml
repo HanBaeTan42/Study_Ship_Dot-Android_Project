@@ -40,7 +40,7 @@
 
 
     <LinearLayout
-        android:id="@+id/content_background"
+        android:id="@+id/content_background_findId"
         android:layout_width="325dp"
         android:layout_height="390dp"
         android:layout_gravity="center"
