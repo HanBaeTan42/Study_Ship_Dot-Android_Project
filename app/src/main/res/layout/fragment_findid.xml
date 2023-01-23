@@ -31,7 +31,6 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_weight="4"
-            android:autoSizeTextType="uniform"
             android:fontFamily="@font/cookierun_regular"
             android:text="@string/app_name"
             android:textSize="35dp" />
@@ -52,11 +51,11 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/name_findId"
+            android:id="@+id/inputName_findId"
             android:layout_width="290dp"
             android:layout_height="60dp"
             android:fontFamily="@font/cookierun_regular"
-            android:hint="이름"
+            android:hint="@string/name"
             android:inputType="text"
             android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -65,12 +64,12 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/phnum_findId"
+            android:id="@+id/inputPn_findId"
             android:layout_width="290dp"
             android:layout_height="60dp"
             android:layout_marginTop="50dp"
             android:fontFamily="@font/cookierun_regular"
-            android:hint="휴대폰 번호"
+            android:hint="@string/pn"
             android:inputType="phone"
             android:textSize="25sp"
             app:layout_constraintBottom_toBottomOf="parent"
