@@ -1,10 +1,10 @@
 package com.hb.study_ship_dot.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.hb.study_ship_dot.R
 
 // TODO: Rename parameter arguments, choose names that match
@@ -35,7 +35,7 @@ class FindIdFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_findid, container, false)
+        return inflater.inflate(R.layout.fragment_find_id, container, false)
     }
 
     companion object {

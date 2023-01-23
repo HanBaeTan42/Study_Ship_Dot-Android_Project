@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/beige_1"
     android:orientation="vertical"
-    tools:context=".fragment.Change_PwFragment">
+    tools:context=".fragment.ChangePwFragment">
 
     <ImageView
         android:id="@+id/logo_changePw"
@@ -82,7 +82,7 @@
 
     <Button
         android:id="@+id/btn_changePw_changePw"
-        android:layout_width="150dp"
+        android:layout_width="190dp"
         android:layout_height="70dp"
         android:layout_marginBottom="100dp"
         android:backgroundTint="@color/blue_2"
