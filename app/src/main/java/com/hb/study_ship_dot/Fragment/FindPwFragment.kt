@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.hb.study_ship_dot.R
+import kotlinx.android.synthetic.main.fragment_find_pw.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,6 +25,7 @@ class FindPwFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -36,6 +40,16 @@ class FindPwFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_find_pw, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        
+        navController = Navigation.findNavController(view)
+        
+        btn_serachPw_findPw.setOnClickListener { //비밀번호 변경 버튼을 눌렀을 때 비밀번호 변경 페이지로 이동
+            navController.navigate(R.id.changePwFragment)
+        }
     }
 
     companion object {

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.hb.study_ship_dot.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_joinFragment"
+            app:destination="@id/joinFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_findPwFragment"
+            app:destination="@id/findPwFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_findIdFragment"
+            app:destination="@id/findIdFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePwFragment"
+        android:name="com.hb.study_ship_dot.fragment.ChangePwFragment"
+        android:label="fragment_change_pw"
+        tools:layout="@layout/fragment_change_pw" />
+    <fragment
+        android:id="@+id/findIdFragment"
+        android:name="com.hb.study_ship_dot.fragment.FindIdFragment"
+        android:label="fragment_find_id"
+        tools:layout="@layout/fragment_find_id" />
+    <fragment
+        android:id="@+id/findPwFragment"
+        android:name="com.hb.study_ship_dot.Fragment.FindPwFragment"
+        android:label="fragment_find_pw"
+        tools:layout="@layout/fragment_find_pw" >
+        <action
+            android:id="@+id/action_findPwFragment_to_changePwFragment"
+            app:destination="@id/changePwFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/joinFragment"
+        android:name="com.hb.study_ship_dot.fragment.JoinFragment"
+        android:label="fragment_join"
+        tools:layout="@layout/fragment_join" >
+        <action
+            android:id="@+id/action_joinFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>
