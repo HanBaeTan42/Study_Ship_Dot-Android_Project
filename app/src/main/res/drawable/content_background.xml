@@ -7,5 +7,9 @@
         android:topRightRadius="30dp"
         android:bottomLeftRadius="30dp"
         android:bottomRightRadius="30dp"/>
+<<<<<<< HEAD
 </shape>
 
+=======
+</shape>
+>>>>>>> feat/#8/FindId
