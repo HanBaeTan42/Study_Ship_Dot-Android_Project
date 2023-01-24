@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:background="@color/beige_1"
     android:orientation="vertical"
-    tools:context=".Fragment.FindPwFragment">
+    tools:context=".Fragment.ChkInfoPw">
 
     <ImageView
-        android:id="@+id/logo_findPw"
+        android:id="@+id/logo_chkInfoPw"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginLeft="10dp"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/app_name_findPw"
+        android:id="@+id/app_name_chkInfoPw"
         android:layout_width="wrap_content"
         android:layout_height="64dp"
         android:layout_marginLeft="10dp"
@@ -32,12 +32,12 @@
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@id/logo_findPw"
+        app:layout_constraintStart_toEndOf="@id/logo_chkInfoPw"
         app:layout_constraintTop_toTopOf="parent" />
 
 
     <ImageView
-        android:id="@+id/content_background_findPw"
+        android:id="@+id/content_background_chkInfoPw"
         android:layout_width="325dp"
         android:layout_height="390dp"
         android:layout_marginLeft="10dp"
@@ -45,13 +45,13 @@
         android:layout_marginRight="10dp"
         android:contentDescription="@null"
         android:src="@drawable/content_background"
-        app:layout_constraintBottom_toTopOf="@id/btn_serachPw_findPw"
+        app:layout_constraintBottom_toTopOf="@id/btn_changePw_chkInfoPw"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/app_name_findPw" />
+        app:layout_constraintTop_toBottomOf="@id/app_name_chkInfoPw" />
 
     <Button
-        android:id="@+id/btn_serachPw_findPw"
+        android:id="@+id/btn_changePw_chkInfoPw"
         android:layout_width="190dp"
         android:layout_height="70dp"
         android:layout_marginBottom="100dp"
@@ -66,7 +66,7 @@
 
 
     <EditText
-        android:id="@+id/InputId_findPw"
+        android:id="@+id/InputId_chkInfoPw"
         android:layout_width="290dp"
         android:layout_height="60dp"
         android:layout_marginBottom="20dp"
@@ -76,14 +76,14 @@
         android:minHeight="48dp"
         android:textSize="25sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/inputName_findPw"
+        app:layout_constraintBottom_toTopOf="@id/inputName_chkInfoPw"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
 
         />
 
     <EditText
-        android:id="@+id/inputName_findPw"
+        android:id="@+id/inputName_chkInfoPw"
         android:layout_width="290dp"
         android:layout_height="60dp"
         android:fontFamily="@font/cookierun_regular"
@@ -91,13 +91,13 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:textSize="25sp"
-        app:layout_constraintBottom_toBottomOf="@id/content_background_findPw"
-        app:layout_constraintEnd_toEndOf="@id/content_background_findPw"
-        app:layout_constraintStart_toStartOf="@id/content_background_findPw"
-        app:layout_constraintTop_toTopOf="@id/content_background_findPw" />
+        app:layout_constraintBottom_toBottomOf="@id/content_background_chkInfoPw"
+        app:layout_constraintEnd_toEndOf="@id/content_background_chkInfoPw"
+        app:layout_constraintStart_toStartOf="@id/content_background_chkInfoPw"
+        app:layout_constraintTop_toTopOf="@id/content_background_chkInfoPw" />
 
     <EditText
-        android:id="@+id/inputPn_findPw"
+        android:id="@+id/inputPn_chkInfoPw"
         android:layout_width="290dp"
         android:layout_height="60dp"
         android:layout_marginTop="20dp"
@@ -108,6 +108,6 @@
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/inputName_findPw" />
+        app:layout_constraintTop_toBottomOf="@id/inputName_chkInfoPw" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

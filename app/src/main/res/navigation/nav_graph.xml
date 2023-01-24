@@ -31,9 +31,9 @@
         tools:layout="@layout/fragment_find_id" />
     <fragment
         android:id="@+id/findPwFragment"
-        android:name="com.hb.study_ship_dot.Fragment.FindPwFragment"
+        android:name="com.hb.study_ship_dot.Fragment.ChkInfoPw"
         android:label="fragment_find_pw"
-        tools:layout="@layout/fragment_find_pw" >
+        tools:layout="@layout/fragment_chk_info_pw" >
         <action
             android:id="@+id/action_findPwFragment_to_changePwFragment"
             app:destination="@id/changePwFragment" />

@@ -110,7 +110,7 @@
             android:layout_marginRight="5dp"
             android:clickable="true"
             android:fontFamily="@font/cookierun_regular"
-            android:text="비밀번호 찾기"
+            android:text="비밀번호 변경"
             android:textColor="@color/black"
             android:textSize="20sp"></TextView>
 
