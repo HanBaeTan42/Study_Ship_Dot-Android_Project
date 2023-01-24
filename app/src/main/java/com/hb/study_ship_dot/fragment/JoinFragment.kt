@@ -58,7 +58,7 @@ class JoinFragment : Fragment() {
 
                 //쉐어드에 입력한 정보 저장
                 val sharedPreference = activity?.getSharedPreferences("info", Context.MODE_PRIVATE)
-                val editor = sharedPreference.edit()
+                val editor = sharedPreference?.edit()
                 editor.putString("name",name)
                 editor.putString("pn",pn)
                 editor.putString("id",id)
