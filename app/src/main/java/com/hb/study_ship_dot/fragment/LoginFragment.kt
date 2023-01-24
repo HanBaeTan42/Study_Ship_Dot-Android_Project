@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -47,8 +48,27 @@ class LoginFragment : Fragment() {
 
         navController = Navigation.findNavController(view)
 
-        btn_login_login.setOnClickListener { //로그인 버튼을 눌렀을때 ??
-            //navController.navigate(R.id.)
+        btn_login_login.setOnClickListener { //로그인 버튼을 눌렀을때
+            // EditText에서 입력받은 텍스트 불러옴
+            var Id = inputId_login.text.toString()
+            var Pw = inputPw_login.text.toString()
+
+            // Id, Pw, Index 파일 선언
+            val Id_file = context?.getSharedPreferences("Id_file", 0)
+            val Pw_file = context?.getSharedPreferences("Pw_file", 0)
+            val Index_file = context?.getSharedPreferences("Index_file", 0)
+
+            // index 데이터를 Index_file에서 가져옴
+            val index = Index_file?.getInt("index", 0)
+
+            // for문을 통해 id를 확인
+            for(i in 1..10) // index로 설정해줘야함
+                if(Id == Id_file?.getString(i.toString(), ""))
+                    if (Pw == Pw_file?.getString(i.toString(), "")){
+                        //navController.navigate(R.id.)
+                        Toast.makeText(context, "환영합니다.", Toast.LENGTH_SHORT).show()
+                    }
+            Toast.makeText(context, "아이디/비밀번호 입력 오류입니다.", Toast.LENGTH_SHORT).show()
         }
 
         btn_loginTojoin_login.setOnClickListener { //회원가입 버튼을 눌렀을때 회원가입 페이지로 이동
