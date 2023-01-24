@@ -34,13 +34,18 @@ class JoinFragment : Fragment() {
 
         navController = Navigation.findNavController(view)
 
-        btn_overlap_join.setOnClickListener { //아이디 중복 체크 버튼을 눌렀을 때 ??
+        btn_overlap_join.setOnClickListener { //아이디 중복 체크 버튼을 눌렀을 때
             Log.d(TAG,"아이디 중복 확인 버튼 클릭")
 
-            val id=inputId_join.text.toString()
+            val login_id=inputId_join.text.toString()
 
-            //
-
+            //중복체크
+            if(id.equals(login_id)){
+                Toast.makeText(context, "사용할 수 없는 아이디입니다.", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(context, "사용 가능한 아이디입니다.", Toast.LENGTH_SHORT).show()
+            }
         }
         
         btn_join_join.setOnClickListener { //회원가입 버튼을 눌렀을 때 로그인 페이지로 이동
@@ -54,11 +59,11 @@ class JoinFragment : Fragment() {
 
             if(){ //회원가입 성공(중복확인 완료, 비밀번호 일치 포함)
                 //가입 완료 메세지
-                Toast.makeText(this, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show()
 
                 //쉐어드에 입력한 정보 저장
-                val sharedPreference = activity?.getSharedPreferences("info", Context.MODE_PRIVATE)
-                val editor = sharedPreference?.edit()
+                val sharedPreference = getSharedPreferences("info", Context.MODE_PRIVATE)
+                val editor = sharedPreference.edit()
                 editor.putString("name",name)
                 editor.putString("pn",pn)
                 editor.putString("id",id)
