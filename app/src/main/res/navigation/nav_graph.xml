@@ -13,11 +13,11 @@
             android:id="@+id/action_loginFragment_to_joinFragment"
             app:destination="@id/joinFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_findPwFragment"
-            app:destination="@id/findPwFragment" />
-        <action
             android:id="@+id/action_loginFragment_to_findIdFragment"
             app:destination="@id/findIdFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_chkInfoPwFragment"
+            app:destination="@id/chkInfoPwFragment" />
     </fragment>
     <fragment
         android:id="@+id/changePwFragment"
@@ -34,15 +34,6 @@
         android:label="fragment_find_id"
         tools:layout="@layout/fragment_find_id" />
     <fragment
-        android:id="@+id/findPwFragment"
-        android:name="com.hb.study_ship_dot.Fragment.ChkInfoPw"
-        android:label="fragment_find_pw"
-        tools:layout="@layout/fragment_chk_info_pw" >
-        <action
-            android:id="@+id/action_findPwFragment_to_changePwFragment"
-            app:destination="@id/changePwFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/joinFragment"
         android:name="com.hb.study_ship_dot.fragment.JoinFragment"
         android:label="fragment_join"
@@ -50,5 +41,14 @@
         <action
             android:id="@+id/action_joinFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chkInfoPwFragment"
+        android:name="com.hb.study_ship_dot.Fragment.ChkInfoPwFragment"
+        android:label="fragment_chk_info_pw"
+        tools:layout="@layout/fragment_chk_info_pw" >
+        <action
+            android:id="@+id/action_chkInfoPwFragment_to_changePwFragment"
+            app:destination="@id/changePwFragment" />
     </fragment>
 </navigation>
