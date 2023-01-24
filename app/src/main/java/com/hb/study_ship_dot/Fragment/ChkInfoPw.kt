@@ -48,12 +48,11 @@ class ChkInfoPw : Fragment() {
 
         }
 
-
     }
 
     fun dialog(type: String){
 
-        val dialog=AlertDialog.Builder(this)
+        val dialog=AlertDialog.Builder(context)
         if (type.equals("success")){
             dialog.setTitle("회원정보 일치")
             dialog.setMessage("비밀번호 변경 페이지로 넘어갑니다.")
@@ -92,15 +91,7 @@ class ChkInfoPw : Fragment() {
         }
     }
 
-    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ChkInfoPw().apply {
-                arguments = Bundle().apply {
 
-                }
-            }
-    }
 }
 class MyApplication : Application() {
     companion object {
@@ -123,4 +114,5 @@ class PreferenceUtil(context: Context) {
     fun setString(key: String, str: String) {
         prefs.edit().putString(key, str).apply()
     }
+
 }
