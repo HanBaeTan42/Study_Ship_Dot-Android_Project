@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -47,8 +48,18 @@ class ChangePwFragment : Fragment() {
         
         navController = Navigation.findNavController(view)
         
-        btn_changePw_changePw.setOnClickListener { //변경 버튼을 눌렀을 때 ??기능수행 후 로그인 화면으로 이동 
-            navController.navigate(R.id.loginFragment)
+        btn_changePw_changePw.setOnClickListener { //변경 버튼을 눌렀을 때 두 비밀번호 텍스트가 일치하는 지 확인 후 로그인 화면으로 이동
+            // EditText에서 입력받은 데이터를 가져옴
+            val newPw = inputNewPw_changePw.text.toString()
+            val newPw_re = inputNewPw_re_changePw.text.toString()
+
+            // 새 비밀번호와 비밀번호 확인 데이터가 일치하는지 확인
+            if(newPw == newPw_re) {
+                Toast.makeText(context, "비밀번호 변경 완료", Toast.LENGTH_SHORT).show()
+                navController.navigate(R.id.loginFragment)
+            }
+            else
+                Toast.makeText(context, "비밀번호 입력 오류", Toast.LENGTH_SHORT).show()
         }
     }
     companion object {
