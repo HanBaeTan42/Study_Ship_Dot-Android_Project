@@ -1,6 +1,8 @@
 package com.hb.study_ship_dot.fragment
 
+import android.content.ContentValues.TAG
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,8 +19,8 @@ class JoinFragment : Fragment() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_join)
 
-        join.setOnClickListener{
-
+        btn_join_join.setOnClickListener{
+            Log.d(TAG,"회원가입 버튼 클릭")
         }
     }
 
