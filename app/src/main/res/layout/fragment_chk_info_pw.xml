@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/beige_1"
     android:orientation="vertical"
-    tools:context=".Fragment.ChkInfoPw">
+    tools:context=".Fragment.ChkInfoPwFragment">
 
     <ImageView
         android:id="@+id/logo_chkInfoPw"
