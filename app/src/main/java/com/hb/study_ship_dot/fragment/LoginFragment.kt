@@ -60,7 +60,7 @@ class LoginFragment : Fragment() {
         }
         
         btn_loginTofindPw_login.setOnClickListener{ //비밀번호 찾기 버튼을 눌렀을때 비밀번호 찾기 페이지로 이동
-            navController.navigate(R.id.findPwFragment)
+            navController.navigate(R.id.chkInfoPwFragment)
         }
     }
 
