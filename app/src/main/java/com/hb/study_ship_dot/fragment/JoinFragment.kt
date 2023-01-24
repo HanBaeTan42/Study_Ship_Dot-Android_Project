@@ -17,7 +17,9 @@ class JoinFragment : Fragment() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_join)
 
-        join.
+        join.setOnClickListener{
+
+        }
     }
 
     override fun onCreateView(
