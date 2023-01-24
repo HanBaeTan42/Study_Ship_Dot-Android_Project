@@ -23,7 +23,11 @@
         android:id="@+id/changePwFragment"
         android:name="com.hb.study_ship_dot.fragment.ChangePwFragment"
         android:label="fragment_change_pw"
-        tools:layout="@layout/fragment_change_pw" />
+        tools:layout="@layout/fragment_change_pw" >
+        <action
+            android:id="@+id/action_changePwFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/findIdFragment"
         android:name="com.hb.study_ship_dot.fragment.FindIdFragment"
