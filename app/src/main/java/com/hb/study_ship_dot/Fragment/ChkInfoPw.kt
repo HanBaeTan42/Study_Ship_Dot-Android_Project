@@ -8,30 +8,18 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.hb.study_ship_dot.R
-import kotlinx.android.synthetic.main.fragment_find_pw.*
+import kotlinx.android.synthetic.main.fragment_chk_info_pw.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ChkInfoPw.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ChkInfoPw : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    var isIdExist=false
+    var isNameExist=false
+    var isPnExist=false
+
 
     lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -46,8 +34,8 @@ class ChkInfoPw : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         
         navController = Navigation.findNavController(view)
-        
-        btn_serachPw_findPw.setOnClickListener { //비밀번호 변경 버튼을 눌렀을 때 비밀번호 변경 페이지로 이동
+
+        btn_changePw_chkInfoPw.setOnClickListener { //비밀번호 변경 버튼을 눌렀을 때 비밀번호 변경 페이지로 이동
             navController.navigate(R.id.changePwFragment)
         }
     }
@@ -66,8 +54,7 @@ class ChkInfoPw : Fragment() {
         fun newInstance(param1: String, param2: String) =
             ChkInfoPw().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+
                 }
             }
     }
