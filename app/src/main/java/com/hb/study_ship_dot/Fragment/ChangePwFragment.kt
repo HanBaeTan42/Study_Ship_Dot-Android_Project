@@ -35,38 +35,6 @@ class ChangePwFragment : Fragment() {
         }
     }
 
-    fun init(){
-        val Id_file = context?.getSharedPreferences("Id_file", 0)
-        val Pw_file = context?.getSharedPreferences("Pw_file", 0)
-        val Index_file = context?.getSharedPreferences("Index_file", 0)
-        val Name_file = context?.getSharedPreferences("Name_file", 0)
-        val Pn_file = context?.getSharedPreferences("Pn_file", 0)
-
-        val Id_editor = Id_file?.edit()
-        Id_editor?.putString("1", "aaa")
-        Id_editor?.putString("2", "bbb")
-        Id_editor?.apply()
-
-        val Pw_editor = Pw_file?.edit()
-        Pw_editor?.putString("1", "asd123")
-        Pw_editor?.putString("2", "qwe456")
-        Pw_editor?.apply()
-
-        val Index_editor = Index_file?.edit()
-        Index_editor?.putInt("index", 2)
-        Index_editor?.apply()
-
-        val Name_editor = Name_file?.edit()
-        Name_editor?.putString("1", "곽춘배")
-        Name_editor?.putString("2", "편덕배")
-        Name_editor?.apply()
-
-        val Pn_editor = Pn_file?.edit()
-        Pn_editor?.putString("1", "010-1234-1234")
-        Pn_editor?.putString("2", "010-5678-5678")
-        Pn_editor?.apply()
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -77,8 +45,6 @@ class ChangePwFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        init()
 
         navController = Navigation.findNavController(view)
         
