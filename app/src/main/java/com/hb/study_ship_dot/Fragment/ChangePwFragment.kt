@@ -35,6 +35,38 @@ class ChangePwFragment : Fragment() {
         }
     }
 
+    fun init(){
+        val Id_file = context?.getSharedPreferences("Id_file", 0)
+        val Pw_file = context?.getSharedPreferences("Pw_file", 0)
+        val Index_file = context?.getSharedPreferences("Index_file", 0)
+        val Name_file = context?.getSharedPreferences("Name_file", 0)
+        val Pn_file = context?.getSharedPreferences("Pn_file", 0)
+
+        val Id_editor = Id_file?.edit()
+        Id_editor?.putString("1", "aaa")
+        Id_editor?.putString("2", "bbb")
+        Id_editor?.apply()
+
+        val Pw_editor = Pw_file?.edit()
+        Pw_editor?.putString("1", "asd123")
+        Pw_editor?.putString("2", "qwe456")
+        Pw_editor?.apply()
+
+        val Index_editor = Index_file?.edit()
+        Index_editor?.putInt("index", 2)
+        Index_editor?.apply()
+
+        val Name_editor = Name_file?.edit()
+        Name_editor?.putString("1", "곽춘배")
+        Name_editor?.putString("2", "편덕배")
+        Name_editor?.apply()
+
+        val Pn_editor = Pn_file?.edit()
+        Pn_editor?.putString("1", "010-1234-1234")
+        Pn_editor?.putString("2", "010-5678-5678")
+        Pn_editor?.apply()
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,17 +77,27 @@ class ChangePwFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
+
+        init()
+
         navController = Navigation.findNavController(view)
         
         btn_changePw_changePw.setOnClickListener { //변경 버튼을 눌렀을 때 두 비밀번호 텍스트가 일치하는 지 확인 후 로그인 화면으로 이동
+            val index = 0   // 바꿔줄 비밀번호의 위치
+
             // EditText에서 입력받은 데이터를 가져옴
             val newPw = inputNewPw_changePw.text.toString()
             val newPw_re = inputNewPw_re_changePw.text.toString()
 
+            // SharedPreferences 타입의 Pw 파일을 가져옴
+            val Pw_file = context?.getSharedPreferences("Pw_file", 0)
+            val Pw_editor = Pw_file?.edit()     // editor 선언
+
             // 새 비밀번호와 비밀번호 확인 데이터가 일치하는지 확인
             if(newPw == newPw_re) {
                 Toast.makeText(context, "비밀번호 변경 완료", Toast.LENGTH_SHORT).show()
+                Pw_editor?.putString("${index}", newPw)
+                Pw_editor?.apply()
                 navController.navigate(R.id.loginFragment)
             }
             else
