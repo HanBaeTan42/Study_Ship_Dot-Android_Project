@@ -1,4 +1,4 @@
-package com.hb.study_ship_dot.fragment
+package com.hb.study_ship_dot.Fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
