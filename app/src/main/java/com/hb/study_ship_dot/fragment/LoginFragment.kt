@@ -48,26 +48,29 @@ class LoginFragment : Fragment() {
 
         navController = Navigation.findNavController(view)
 
+        // Id, Pw, Index 파일 선언
+        val Id_file = context?.getSharedPreferences("Id_file", 0)
+        val Pw_file = context?.getSharedPreferences("Pw_file", 0)
+        val Index_file = context?.getSharedPreferences("Index_file", 0)
+
         btn_login_login.setOnClickListener { //로그인 버튼을 눌렀을때
             // EditText에서 입력받은 텍스트 불러옴
             var Id = inputId_login.text.toString()
             var Pw = inputPw_login.text.toString()
 
-            // Id, Pw, Index 파일 선언
-            val Id_file = context?.getSharedPreferences("Id_file", 0)
-            val Pw_file = context?.getSharedPreferences("Pw_file", 0)
-            val Index_file = context?.getSharedPreferences("Index_file", 0)
-
+            // Index 파일에서 데이터를 저장
             val index = Index_file?.getInt("index", 0)
 
             // for문을 통해 id를 확인
             for(i in 1..index!!)
-                if(Id == Id_file?.getString(i.toString(), ""))
-                    if (Pw == Pw_file?.getString(i.toString(), "")){
-                        //navController.navigate(R.id.)
+                if(Id == Id_file?.getString("${i}", ""))
+                    if (Pw == Pw_file?.getString("${i}", "")){
+                        // 다음 화면이 없기 때문에 우선 주석 처리를 해놓음
+                        // navController.navigate(R.id.)
                         Toast.makeText(context, "환영합니다.", Toast.LENGTH_SHORT).show()
                         return@setOnClickListener
                     }
+            // 함수가 종료되지 않을 경우
             Toast.makeText(context, "아이디/비밀번호 입력 오류입니다.", Toast.LENGTH_SHORT).show()
         }
 
