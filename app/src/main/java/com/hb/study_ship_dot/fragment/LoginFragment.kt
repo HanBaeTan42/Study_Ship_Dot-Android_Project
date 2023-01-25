@@ -48,15 +48,15 @@ class LoginFragment : Fragment() {
 
         navController = Navigation.findNavController(view)
 
-        // Id, Pw, Index 파일 선언
-        val Id_file = context?.getSharedPreferences("Id_file", 0)
-        val Pw_file = context?.getSharedPreferences("Pw_file", 0)
-        val Index_file = context?.getSharedPreferences("Index_file", 0)
-
         btn_login_login.setOnClickListener { //로그인 버튼을 눌렀을때
             // EditText에서 입력받은 텍스트 불러옴
             var Id = inputId_login.text.toString()
             var Pw = inputPw_login.text.toString()
+
+            // Id, Pw, Index 파일 선언
+            val Id_file = context?.getSharedPreferences("Id_file", 0)
+            val Pw_file = context?.getSharedPreferences("Pw_file", 0)
+            val Index_file = context?.getSharedPreferences("Index_file", 0)
 
             // Index 파일에서 데이터를 저장
             val index = Index_file?.getInt("index", 0)
