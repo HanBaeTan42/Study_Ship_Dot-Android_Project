@@ -44,7 +44,7 @@
     </fragment>
     <fragment
         android:id="@+id/chkInfoPwFragment"
-        android:name="com.hb.study_ship_dot.Fragment.ChkInfoPwFragment"
+        android:name="com.hb.study_ship_dot.fragment.ChkInfoPwFragment"
         android:label="fragment_chk_info_pw"
         tools:layout="@layout/fragment_chk_info_pw" >
         <action
