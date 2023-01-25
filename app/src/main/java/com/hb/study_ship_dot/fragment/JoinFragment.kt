@@ -36,9 +36,8 @@ class JoinFragment : Fragment() {
 
         var id_check =false
         var pw_check =false
-        var isExistBlank=false
-        var index_size=context?.getSharedPreferences("Index_file",0)
-        var index =1
+        val Index_file = context?.getSharedPreferences("Index_file", 0)
+        var index = Index_file?.getInt("index", 0)
         var count =0
 
         btn_overlap_join.setOnClickListener { //아이디 중복 체크 버튼을 눌렀을 때
@@ -48,13 +47,13 @@ class JoinFragment : Fragment() {
             val Id_check = context?.getSharedPreferences("Id_file", 0)
 
             //중복체크
-            for(i in 1 ..index_size) {
+            for(i in 1 ..index!!) {
                 if (Id_check?.getString("${i}", "").equals(login_id)) {
                     count=0
                     break
                 }
                 else{
-                    count ++
+                    count++
                 }
             }
             if(count==0){ //중복인 경우
@@ -75,6 +74,8 @@ class JoinFragment : Fragment() {
             val pw= inputPw_join.text.toString()
             val pwch=inputPwch_join.text.toString()
 
+            var isExistBlank=false
+
             //입력되지 않은 정보가 있는 경우
             if(name.isEmpty() || pn.isEmpty() || id.isEmpty() || pw.isEmpty() || pwch.isEmpty()){
                 Toast.makeText(context, "회원정보를 모두 입력해주세요.", Toast.LENGTH_SHORT).show()
@@ -83,6 +84,9 @@ class JoinFragment : Fragment() {
             else{ //모든 정보가 입력된 후 비밀번호와 비밀번호 확인이 일치하는지 확인
                 if(pw.equals(pwch)){
                     pw_check = true
+                    if(!id_check){
+                        Toast.makeText(context, "아이디 중복확인이 필요합니다.", Toast.LENGTH_SHORT).show()
+                    }
                 }
                 else{
                     Toast.makeText(context, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
@@ -100,8 +104,8 @@ class JoinFragment : Fragment() {
                 val Pn_file = context?.getSharedPreferences("Pn_file", 0)
 
                 val Index_editor = Index_file?.edit()
-                index ++ //데이터를 저장할 새로운 인덱스
-                Index_editor?.putInt("index",index)
+                index = index!! + 1 //데이터를 저장할 새로운 인덱스
+                Index_editor?.putInt("index", index!!)
                 Index_editor?.apply()
 
                 val Name_editor= Name_file?.edit()
