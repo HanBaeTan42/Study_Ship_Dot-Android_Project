@@ -96,6 +96,7 @@ class ChangePwFragment : Fragment() {
             // 새 비밀번호와 비밀번호 확인 데이터가 일치하는지 확인
             if(newPw == newPw_re) {
                 Toast.makeText(context, "비밀번호 변경 완료", Toast.LENGTH_SHORT).show()
+                // 비밀번호를 바꿔서 저장
                 Pw_editor?.putString("${index}", newPw)
                 Pw_editor?.apply()
                 navController.navigate(R.id.loginFragment)
