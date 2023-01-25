@@ -1,7 +1,7 @@
 package com.hb.study_ship_dot.fragment
 
 import android.content.ContentValues.TAG
-import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -34,22 +34,40 @@ class JoinFragment : Fragment() {
 
         navController = Navigation.findNavController(view)
 
-        btn_overlap_join.setOnClickListener { //아이디 중복 체크 버튼을 눌렀을 때
-            Log.d(TAG,"아이디 중복 확인 버튼 클릭")
+        var id_check =false
+        var pw_check =false
+        var isExistBlank=false
+        var index_size=context?.getSharedPreferences("Index_file",0)
+        var index =1
+        var count =0
 
+        btn_overlap_join.setOnClickListener { //아이디 중복 체크 버튼을 눌렀을 때
             val login_id=inputId_join.text.toString()
 
+            //저장된 id 확인 용
+            val Id_check = context?.getSharedPreferences("Id_file", 0)
+
             //중복체크
-            if(id.equals(login_id)){
+            for(i in 1 ..index_size) {
+                if (Id_check?.getString("${i}", "").equals(login_id)) {
+                    count=0
+                    break
+                }
+                else{
+                    count ++
+                }
+            }
+            if(count==0){ //중복인 경우
                 Toast.makeText(context, "사용할 수 없는 아이디입니다.", Toast.LENGTH_SHORT).show()
+                inputId_join.setText("")
             }
             else{
                 Toast.makeText(context, "사용 가능한 아이디입니다.", Toast.LENGTH_SHORT).show()
+                id_check = true
             }
         }
-        
-        btn_join_join.setOnClickListener { //회원가입 버튼을 눌렀을 때 로그인 페이지로 이동
-            Log.d(TAG,"회원가입 버튼 클릭")
+
+        btn_join_join.setOnClickListener { //회원가입 버튼을 눌렀을 때
 
             val name = inputName_join.text.toString()
             val pn = inputPn_join.text.toString()
@@ -57,20 +75,56 @@ class JoinFragment : Fragment() {
             val pw= inputPw_join.text.toString()
             val pwch=inputPwch_join.text.toString()
 
-            if(){ //회원가입 성공(중복확인 완료, 비밀번호 일치 포함)
+            //입력되지 않은 정보가 있는 경우
+            if(name.isEmpty() || pn.isEmpty() || id.isEmpty() || pw.isEmpty() || pwch.isEmpty()){
+                Toast.makeText(context, "회원정보를 모두 입력해주세요.", Toast.LENGTH_SHORT).show()
+                isExistBlank=true
+            }
+            else{ //모든 정보가 입력된 후 비밀번호와 비밀번호 확인이 일치하는지 확인
+                if(pw.equals(pwch)){
+                    pw_check = true
+                }
+                else{
+                    Toast.makeText(context, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
+                    inputPw_join.setText("")
+                    inputPwch_join.setText("")
+                }
+            }
+
+            if(id_check&&pw_check&&!isExistBlank){ //회원가입 성공(중복확인 완료, 비밀번호 일치, 빈칸 없음)
+                //입력한 정보 각 파일에 저장
+                val Id_file = context?.getSharedPreferences("Id_file", 0)
+                val Pw_file = context?.getSharedPreferences("Pw_file", 0)
+                val Index_file = context?.getSharedPreferences("Index_file", 0)
+                val Name_file = context?.getSharedPreferences("Name_file", 0)
+                val Pn_file = context?.getSharedPreferences("Pn_file", 0)
+
+                val Index_editor = Index_file?.edit()
+                index ++ //데이터를 저장할 새로운 인덱스
+                Index_editor?.putInt("index",index)
+                Index_editor?.apply()
+
+                val Name_editor= Name_file?.edit()
+                Name_editor?.putString("${index}",name)
+                Name_editor?.apply()
+
+                val Pn_editor = Pn_file?.edit()
+                Pn_editor?.putString("${index}",pn)
+                Pn_editor?.apply()
+
+                val Id_editor =Id_file?.edit()
+                Id_editor?.putString("${index}",id)
+                Id_editor?.apply()
+
+                val Pw_editor = Pw_file?.edit()
+                Pw_editor?.putString("${index}",pw)
+                Pw_editor?.apply()
+
+
                 //가입 완료 메세지
                 Toast.makeText(context, "회원가입이 완료되었습니다.", Toast.LENGTH_SHORT).show()
 
-                //쉐어드에 입력한 정보 저장
-                val sharedPreference = getSharedPreferences("info", Context.MODE_PRIVATE)
-                val editor = sharedPreference.edit()
-                editor.putString("name",name)
-                editor.putString("pn",pn)
-                editor.putString("id",id)
-                editor.putString("pw",pw)
-                editor.putString("pwch",pwch)
-                editor.apply()
-
+                //회원가입 성공 후 로그인 화면으로 이동
                 navController.navigate(R.id.loginFragment)
 
             }
