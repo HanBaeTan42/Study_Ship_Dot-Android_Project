@@ -44,9 +44,9 @@ class ChkInfoPwFragment : Fragment() {
         btn_changePw_chkInfoPw.setOnClickListener { //비밀번호 변경 버튼을 눌렀을 때
 
             //editText로부터 입력된 값을 받아옴
-            var id=InputId_chkInfoPw.text.toString()
-            var name=inputName_chkInfoPw.text.toString()
-            var pn=inputPn_chkInfoPw.text.toString()
+            var id = InputId_chkInfoPw.text.toString()
+            var name = inputName_chkInfoPw.text.toString()
+            var pn = inputPn_chkInfoPw.text.toString()
 
             //파일들
             val Index_file = context?.getSharedPreferences("Index_file", 0)
@@ -55,30 +55,24 @@ class ChkInfoPwFragment : Fragment() {
             val Id_file = context?.getSharedPreferences("Id_file", 0)
 
             //인덱스
-            val index=Index_file?.getInt("index",0)
+            val index = Index_file?.getInt("index", 0)
 
             //쉐어드로부터 저장된 id,name,pn 가져오기
-            val saveId=Id_file?.getString("$index","")
-            val saveName=Name_file?.getString("$index","")
-            val savePn=Pn_file?.getString("$index","")
+            val saveId = Id_file?.getString("$index", "")
+            val saveName = Name_file?.getString("$index", "")
+            val savePn = Pn_file?.getString("$index", "")
 
             //사용자가 입력한 값과 쉐어드에서 불러온 값 비교
-            if(id == saveId && name==saveName && pn==savePn){
+            if (id == saveId && name == saveName && pn == savePn) {
                 //회원정보 일치
-                Toast.makeText(context,"회원정보가 일치합니다.\n비밀번호 변경 페이지로 이동합니다.",Toast.LENGTH_SHORT)
+                Toast.makeText(context, "회원정보가 일치합니다.\n비밀번호 변경 페이지로 이동합니다.", Toast.LENGTH_SHORT)
                 //비밀번호 변경 페이지로 이동
                 navController.navigate(R.id.changePwFragment)
-            }
-            else {
+            } else {
                 //회원정보 일치X
-                Toast.makeText(context,"회원정보가 일치하지 않습니다.\n다시입력해주세요.",Toast.LENGTH_SHORT)
+                Toast.makeText(context, "회원정보가 일치하지 않습니다.\n다시입력해주세요.", Toast.LENGTH_SHORT)
             }
-
-
-
-
         }
-
     }
 
     companion object {
