@@ -7,19 +7,11 @@
         <deviceKey>
           <Key>
             <type value="VIRTUAL_DEVICE_PATH" />
-<<<<<<< HEAD
             <value value="C:\Users\heebu\.android\avd\Pixel_2_API_33.avd" />
-=======
-            <value value="C:\Users\user\.android\avd\Pixel_3_API_30.avd" />
->>>>>>> feat/#8/FindId
           </Key>
         </deviceKey>
       </Target>
     </targetSelectedWithDropDown>
-<<<<<<< HEAD
     <timeTargetWasSelectedWithDropDown value="2023-01-21T07:03:54.242151Z" />
-=======
-    <timeTargetWasSelectedWithDropDown value="2023-01-22T16:01:27.416685300Z" />
->>>>>>> feat/#8/FindId
   </component>
 </project>
