@@ -44,7 +44,7 @@ class JoinFragment : Fragment() {
             val login_id=inputId_join.text.toString()
 
             //저장된 id 확인 용
-            val Id_check = context?.getSharedPreferences("Id_file", 0)
+            val Id_file = context?.getSharedPreferences("Id_file", 0)
 
             //중복체크
             for(i in 1 ..index!!) {
@@ -97,7 +97,6 @@ class JoinFragment : Fragment() {
 
             if(id_check&&pw_check&&!isExistBlank){ //회원가입 성공(중복확인 완료, 비밀번호 일치, 빈칸 없음)
                 //입력한 정보 각 파일에 저장
-                val Id_file = context?.getSharedPreferences("Id_file", 0)
                 val Pw_file = context?.getSharedPreferences("Pw_file", 0)
                 val Name_file = context?.getSharedPreferences("Name_file", 0)
                 val Pn_file = context?.getSharedPreferences("Pn_file", 0)
