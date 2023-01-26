@@ -1,11 +1,14 @@
 package com.hb.study_ship_dot.fragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.hb.study_ship_dot.R
+import kotlinx.android.synthetic.main.fragment_find_id.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -14,13 +17,15 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [Change_PwFragment.newInstance] factory method to
+ * Use the [BlankFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class Change_PwFragment : Fragment() {
+class FindIdFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,9 +40,18 @@ class Change_PwFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_change__pw, container, false)
+        return inflater.inflate(R.layout.fragment_find_id, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        navController = Navigation.findNavController(view)
+
+        btn_findId_findId.setOnClickListener { //아이디 찾기 버튼을 눌렀을 때 ??
+
+        }
+    }
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -45,12 +59,12 @@ class Change_PwFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment Change_PwFragment.
+         * @return A new instance of fragment BlankFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            Change_PwFragment().apply {
+            FindIdFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logo_login"
         android:layout_width="64dp"
         android:layout_height="64dp"
         android:layout_marginLeft="10dp"
@@ -21,7 +22,7 @@
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/app_name_login"
         android:layout_width="wrap_content"
         android:layout_height="64dp"
         android:layout_marginLeft="10dp"
@@ -32,12 +33,12 @@
         android:textSize="35sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toEndOf="@+id/logo_login"
         app:layout_constraintTop_toTopOf="parent"></TextView>
 
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_login_login"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:backgroundTint="@color/beige_2"
@@ -46,15 +47,15 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         app:cornerRadius="15dp"
-        app:layout_constraintBottom_toBottomOf="@+id/content_background"
+        app:layout_constraintBottom_toBottomOf="@+id/content_background_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/inputPw_login"
         app:layout_constraintVertical_bias="0.45" />
 
     <ImageView
-        android:id="@+id/content_background"
+        android:id="@+id/content_background_login"
         android:layout_width="350dp"
         android:layout_height="550dp"
         android:layout_marginLeft="5dp"
@@ -67,18 +68,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TableRow
+        android:id="@+id/tableRow_login"
         android:layout_width="327dp"
         android:layout_height="34dp"
         android:layout_marginTop="5dp"
         android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="@+id/content_background"
+        app:layout_constraintBottom_toBottomOf="@+id/content_background_login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+        app:layout_constraintTop_toBottomOf="@+id/btn_login_login"
         app:layout_constraintVertical_bias="0.05">
 
         <TextView
-            android:id="@+id/btn_loginTojoin"
+            android:id="@+id/btn_loginTojoin_login"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginLeft="5dp"
@@ -86,12 +88,12 @@
             android:clickable="true"
             android:fontFamily="@font/cookierun_regular"
             android:text="회원가입"
+            android:textAllCaps="false"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"></TextView>
+            android:textSize="20sp"></TextView>
 
         <TextView
-            android:id="@+id/btn_loginTofindId"
+            android:id="@+id/btn_loginTofindId_login"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
@@ -99,53 +101,51 @@
             android:fontFamily="@font/cookierun_regular"
             android:text="아이디 찾기"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"></TextView>
+            android:textSize="20sp"></TextView>
 
         <TextView
-            android:id="@+id/btn_loginTofindPw"
+            android:id="@+id/btn_loginTofindPw_login"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="5dp"
             android:clickable="true"
             android:fontFamily="@font/cookierun_regular"
-            android:text="비밀번호 찾기"
+            android:text="비밀번호 변경"
             android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"></TextView>
+            android:textSize="20sp"></TextView>
 
     </TableRow>
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/inputPw_login"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="410dp"
+        android:layout_marginTop="376dp"
         android:fontFamily="@font/cookierun_regular"
         android:hint="비밀번호"
         android:inputType="textPassword"
         android:singleLine="true"
-        app:layout_constraintEnd_toEndOf="@+id/content_background"
-        app:layout_constraintStart_toStartOf="@+id/content_background"
+        app:layout_constraintEnd_toEndOf="@+id/content_background_login"
+        app:layout_constraintStart_toStartOf="@+id/content_background_login"
         app:layout_constraintTop_toTopOf="parent"></EditText>
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/inputId_login"
         android:layout_width="300dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:layout_marginTop="270dp"
+        android:layout_marginTop="264dp"
         android:fontFamily="@font/cookierun_regular"
         android:hint="아이디"
         android:inputType="text"
         android:singleLine="true"
-        app:layout_constraintEnd_toEndOf="@+id/content_background"
-        app:layout_constraintStart_toStartOf="@+id/content_background"
+        app:layout_constraintEnd_toEndOf="@+id/content_background_login"
+        app:layout_constraintStart_toStartOf="@+id/content_background_login"
         app:layout_constraintTop_toTopOf="parent"></EditText>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/title_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="145dp"

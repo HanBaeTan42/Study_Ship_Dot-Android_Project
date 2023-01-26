@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.hb.study_ship_dot.fragment.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_joinFragment"
+            app:destination="@id/joinFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_findIdFragment"
+            app:destination="@id/findIdFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_chkInfoPwFragment"
+            app:destination="@id/chkInfoPwFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePwFragment"
+        android:name="com.hb.study_ship_dot.fragment.ChangePwFragment"
+        android:label="fragment_change_pw"
+        tools:layout="@layout/fragment_change_pw" >
+        <action
+            android:id="@+id/action_changePwFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/findIdFragment"
+        android:name="com.hb.study_ship_dot.fragment.FindIdFragment"
+        android:label="fragment_find_id"
+        tools:layout="@layout/fragment_find_id" />
+    <fragment
+        android:id="@+id/joinFragment"
+        android:name="com.hb.study_ship_dot.fragment.JoinFragment"
+        android:label="fragment_join"
+        tools:layout="@layout/fragment_join" >
+        <action
+            android:id="@+id/action_joinFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/chkInfoPwFragment"
+        android:name="com.hb.study_ship_dot.Fragment.ChkInfoPwFragment"
+        android:label="fragment_chk_info_pw"
+        tools:layout="@layout/fragment_chk_info_pw" >
+        <action
+            android:id="@+id/action_chkInfoPwFragment_to_changePwFragment"
+            app:destination="@id/changePwFragment" />
+    </fragment>
+</navigation>
