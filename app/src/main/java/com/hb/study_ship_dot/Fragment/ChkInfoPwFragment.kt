@@ -1,4 +1,4 @@
-package com.hb.study_ship_dot.Fragment
+package com.hb.study_ship_dot.fragment
 
 import android.app.AlertDialog
 import android.app.Application
