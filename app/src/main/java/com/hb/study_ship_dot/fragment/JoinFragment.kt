@@ -99,7 +99,6 @@ class JoinFragment : Fragment() {
                 //입력한 정보 각 파일에 저장
                 val Id_file = context?.getSharedPreferences("Id_file", 0)
                 val Pw_file = context?.getSharedPreferences("Pw_file", 0)
-                val Index_file = context?.getSharedPreferences("Index_file", 0)
                 val Name_file = context?.getSharedPreferences("Name_file", 0)
                 val Pn_file = context?.getSharedPreferences("Pn_file", 0)
 
