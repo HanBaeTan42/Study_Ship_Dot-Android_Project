@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beige_1"
+    android:orientation="vertical"
+    tools:context=".fragment.FindIdFragment">
+
+    <ImageView
+        android:id="@+id/logo_findId"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@null"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/app_name_findId"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/cookierun_regular"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textSize="35sp"
+        android:textColor="@color/logo"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/logo_findId"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/content_background_findId"
+        android:layout_width="325dp"
+        android:layout_height="390dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:contentDescription="@null"
+        android:src="@drawable/content_background"
+        app:layout_constraintBottom_toTopOf="@+id/btn_findId_findId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_name_findId"/>
+
+    <EditText
+        android:id="@+id/inputName_findId"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/cookierun_regular"
+        android:hint="@string/name"
+        android:inputType="text"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/inputPn_findId"
+        app:layout_constraintEnd_toEndOf="@+id/content_background_findId"
+        app:layout_constraintStart_toStartOf="@+id/content_background_findId"
+        app:layout_constraintTop_toTopOf="@+id/content_background_findId" />
+
+    <EditText
+        android:id="@+id/inputPn_findId"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="120dp"
+        android:fontFamily="@font/cookierun_regular"
+        android:hint="@string/pn"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@+id/content_background_findId"
+        app:layout_constraintEnd_toEndOf="@+id/content_background_findId"
+        app:layout_constraintStart_toStartOf="@+id/content_background_findId" />
+
+
+
+    <Button
+        android:id="@+id/btn_findId_findId"
+        android:layout_width="190dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/blue_2"
+        android:fontFamily="@font/cookierun_regular"
+        android:text="아이디 찾기"
+        android:textSize="25sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/beige_1"
+    android:orientation="vertical"
+    tools:context=".fragment.CheckInfoFragment">
+
+    <ImageView
+        android:id="@+id/logo_chkInfoPw"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/app_name_chkInfoPw"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/cookierun_regular"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textSize="35sp"
+        android:textColor="@color/logo"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/logo_chkInfoPw"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <ImageView
+        android:id="@+id/content_background_chkInfoPw"
+        android:layout_width="325dp"
+        android:layout_height="390dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="10dp"
+        android:contentDescription="@null"
+        android:src="@drawable/content_background"
+        app:layout_constraintBottom_toTopOf="@id/btn_changePw_chkInfoPw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/app_name_chkInfoPw" />
+
+    <Button
+        android:id="@+id/btn_changePw_chkInfoPw"
+        android:layout_width="190dp"
+        android:layout_height="70dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/blue_2"
+        android:fontFamily="@font/cookierun_regular"
+        android:text="비밀번호 변경"
+        android:textSize="25sp"
+        app:cornerRadius="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <EditText
+        android:id="@+id/InputId_chkInfoPw"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:fontFamily="@font/cookierun_regular"
+        android:hint="아이디"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/inputName_chkInfoPw"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+
+        />
+
+    <EditText
+        android:id="@+id/inputName_chkInfoPw"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/cookierun_regular"
+        android:hint="이름"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="@id/content_background_chkInfoPw"
+        app:layout_constraintEnd_toEndOf="@id/content_background_chkInfoPw"
+        app:layout_constraintStart_toStartOf="@id/content_background_chkInfoPw"
+        app:layout_constraintTop_toTopOf="@id/content_background_chkInfoPw" />
+
+    <EditText
+        android:id="@+id/inputPn_chkInfoPw"
+        android:layout_width="290dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/cookierun_regular"
+        android:hint="휴대폰 번호"
+        android:inputType="phone"
+        android:minHeight="48dp"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/inputName_chkInfoPw" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
